@@ -1,0 +1,173 @@
+<!doctype html>
+<html manifest="Merrellesmobi.manifest">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name=Keywords	content="nine mens morris, morris, mill, muhle, morelles, merrills, merels, merrelles, free, freeware, game, mobile, HTML5, application, app, ipod, iphone, android, blackberry playbook, java, gwt, online, offline, paul emory sullivan">
+<meta name=Description	content="Play Merrelles Mobile on mobile devices such as Blackberry, iPod and Android.">
+<meta name=Author	content="Paul Emory Sullivan">
+<link type="text/css" rel="stylesheet" href="Merrellesmobi.css">
+<title>Merrelles Mobile</title>
+<script type="text/javascript" language="javascript" src="merrellesmobi/merrellesmobi.nocache.js"></script>
+<script>
+	function showInLanguage( languageCode )
+	{
+		if	(	!document.getElementById(	"playlinktext" + languageCode	)	)
+		{
+			languageCode	=	"en";
+		}
+		var playLink 			= document.getElementById(	"playlinktext"						);
+		var playLinkL			= document.getElementById(	"playlinktext" 		+ languageCode	);
+		var instructions		= document.getElementById(	"instructions"						);
+		var instructionsL		= document.getElementById(	"instructions"		+ languageCode	);
+		var appletLink			= document.getElementById(	"appletlinktext"					);
+		var appletLinkL			= document.getElementById(	"appletlinktext"	+ languageCode	);
+		playLink.innerHTML		= playLinkL.innerHTML;
+		instructions.innerHTML	= instructionsL.innerHTML;
+	}
+</script>
+</head>
+<body>
+<noscript>
+  <div style="width: 22em; position: absolute; left: 50%; margin-left: -11em; color: red; background-color: white; border: 1px solid red; padding: 4px; font-family: sans-serif">
+	Your must enable Javascript in your browser to play.
+  </div>
+</noscript>
+<div id="splashcontainer" class="splash">
+	<center>
+		<div class="title">Merrelles Mobile</div>
+		<div class="titlecredit">© MMXII Paul Emory Sullivan</div>
+		<div class="mobiplaylink">
+			<A id="playlinktext" href="javascript:showBoard()"></A>
+		</div>
+		<div>
+			<img src="images/en.png" onmousedown="changeLanguage('en')" ontouchstart="changeLanguage('en')">&nbsp;
+			<img src="images/fr.png" onmousedown="changeLanguage('fr')" ontouchstart="changeLanguage('fr')">&nbsp;
+			<img src="images/de.png" onmousedown="changeLanguage('de')" ontouchstart="changeLanguage('de')">&nbsp;
+		</div>
+	</center>
+	<div id="instructions" class="instructions"></div>
+	<p>
+	<center>
+		<img src="http://counter.digits.com/wc/-d/4/MerrellesWebGame" BORDER="0" >
+	</center>
+</div><!-- splashcontainer -->
+
+<table width="100%">
+<tr>
+	<td align="center">
+		<div id="boardcontainer" class="board" />
+	</td>
+</tr>
+</table>
+<div id="playlinktexten" style="display:none">Play</div>
+<div id="instructionsen" style="display:none">
+	<b>Instructions</b>
+	<p>
+	Merrelles is an implementation of an ancient strategy game variously known as Merels, Mill, Muhle and Nine Mens Morris.
+	You can play Merrelles Mobile on any HTML5 enabled mobile device including BlackBerry PlayBook, iPod Touch, iPad, and Android.
+	<p>
+	Each player starts with 9 men.
+	You win by surrounding your opponent or taking seven of her men.
+	Whenever you make a row of 3 men along a line you must take a highlighted man.
+	Only men outside rows of 3 are highlighted unless all men are within rows.
+	<p>
+	Stage I of the game begins with an empty board.  The swap sides man icon is your colour.
+	On each move you place a man by touching a highlighted spot.
+	<p>
+	Stage II begins when all 9 men are placed.
+	On each move you slide a man along a board line to an adjacent spot.
+	At this point you can win by surrounding your opponent or reducing them to 2.
+	<p>
+	Stage III begins when you have only 3 men left.
+	On each move you can fly a man anywhere and you cannot be surrounded.
+	<p>
+	Icons beneath the board:
+	<br>
+	- Swap sides
+	<br>
+	- Remaining men
+	<br>
+	- Undo move
+	<br>
+	- Redo move
+	<br>
+	- Change level
+	<br>
+	- New game
+</div><!-- English Instructions -->
+<div id="playlinktextfr" style="display:none">Jouer</div>
+<div id="instructionsfr" style="display:none">
+	<b>Instructions</b>
+	<p>
+	Merrelles est une implémentation d'un jeu de stratégie ancien diversement connu comme Merels, Mill, Muhle et Nine Mens Morris.
+	Vous pouvez jouer le Mobile de Merrelles sur n'importe quel HTML5 a rendu capable l'appareil mobile y compris le BlackBerry PlayBook, l'iPod et l'Androïde.
+	<p>
+	Chaque joueur commence avec 9 hommes.
+	Vous gagnez en entourant votre adversaire ou prenant sept de ses hommes.
+	Quand vous faites un rang de 3 hommes le long d'une ligne vous devez prendre un homme souligné.
+	Seulement les hommes rangs extérieurs de 3 sont soulignés à moins que tous les hommes sont dans les rangs.
+	<p>
+	Monter I du jeu commence avec un conseil vide.
+	L'échange prend parti l'icône d'homme est votre couleur.
+	Sur chaque mouvement vous placez un homme en touchant un endroit souligné. 
+	<p>
+	Monter II commence quand tous 9 hommes sont placés.
+	Sur chaque mouvement vous glissez un homme le long d'une ligne de conseil à un endroit adjacent.
+	A ce point que vous pouvez gagner en entourant votre adversaire ou les réduisant à 2. 
+	<p>
+	Monter III commence quand vous avez seulement 3 hommes sont partis.
+	Sur chaque mouvement vous pouvez voler un homme n'importe où et vous ne pouvez pas être entouré. 
+	<p>
+	Les icônes en dessous du conseil :
+	<br>
+	- L'échange prend parti
+	<br>
+	- Hommes restants
+	<br>
+	- Défaire le mouvement
+	<br>
+	- Refaire le mouvement
+	<br>
+	- Changer le niveau
+	<br>
+	- Nouveau jeu
+</div><!-- French Instructions -->
+<div id="playlinktextde" style="display:none">Spielen</div>
+<div id="instructionsde" style="display:none">
+	<b>Anweisungen</b>
+	<p>
+	Merrelles ist eine Ausführung eines alten Strategiespiels auch bekannt als Merels, Mühle, und Nine Mens Morris.
+	Sie können Merrelles auch auf allen HTML5- fähigen Handy einschließlich Brombeere, iPod und Androiden spielen. 
+	<p>
+	Jeder Spieler fängt mit 9 Figuren an. Sie gewinnen durch Umgeben Ihres Gegners oder nehmend sieben von dessen Figuren.
+	Wenn eine Reihe von 3 Figuren entlang einer Linie gemacht haben, müssen Sie einen mit Leuchtstift angezeichneten Figur nehmen.
+	Nur Figuren äußere Reihen von 3 sind angezeichnet es sei denn alle Figuren sind innerhalb Reihen.
+	<p>
+	Stufe I vom Spiel beginnt mit einem leeren Ausschuss.
+	Der Seiten-Tausch Zeichen ist Ihre Farbe.
+	Auf jeder Bewegung stellen Sie einen Figuren durch Berühren eines  angezeichneten Flecks. 
+	<p>
+	Stufe II beginnt, als alle 9 Figuren. gestellt sind.
+	Auf jeder Bewegung schieben Sie einen Figuren entlang einer Ausschusseslinie zu einem angrenzenden Fleck.
+	Jetzt können Sie durch Umgeben Ihres Gegners gewinnen oder reduzieren sie zu 2. 
+	<p>
+	Stufe III beginnt, wenn Sie nur 3 Figuren haben.
+	Auf jeder Bewegung können Sie ein Figur irgendwo fliegen und Sie können nicht umgeben werden. 
+	<p>
+	Zeichen unter dem Spielenbrett:
+	<br>
+	- Seiten Tausch
+	<br>
+	- Gebliebene Figuren
+	<br>
+	- Rücknehmen
+	<br>
+	- Wiederholen
+	<br>
+	- Stufe Ändern
+	<br>
+	- Neues Spiel
+</div><!-- German Instructions -->
+</body>
+</html>

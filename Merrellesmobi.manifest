@@ -1,0 +1,12 @@
+CACHE MANIFEST
+
+# Version 20120724	- Change version to force a cache update.
+
+index.html
+Merrellesmobi.css
+images/papyrus.png
+images/en.png
+images/fr.png
+images/de.png
+merrellesmobi/merrellesmobi.nocache.js
+merrellesmobiworker/merrellesmobiworker.nocache.js
