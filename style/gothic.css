@@ -1,0 +1,16 @@
+
+.Fancy
+{
+	font-family	: Old English Text MT,Poor Richard;
+	color		: black;
+	font-size	: 130%;
+}
+.Plain
+{
+	font-family	: Poor Richard;
+	color		: black;
+	font-size	: 160%;
+}
+
+a		{ color: blue	; text-decoration: none; font-family :Poor Richard; 			}
+a.Message	{ color: black 	; text-decoration: none; font-family :Poor Richard;			}

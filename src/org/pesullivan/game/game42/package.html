@@ -1,0 +1,46 @@
+<html>
+<body bgcolor="white">
+Provides generic classes that generate deterministic 2 player strategy
+game behaviour.  This Java package was produced by Paul Sullivan
+based on his earlier work in C++ based on his earlier work in C.
+Each work is an evolutionary improvement both in design and language technology.
+Java will always be slower than C++ but it is still the best language
+for platform independence.
+<p>
+Evolution of the <b>Game For Two</b> package began in 1985 when Paul received
+as a birthday present, a book called <b><i>The Joy of Computer Chess by David Levy</i></b>.
+In that year, Paul developed a Wari game called Kalah in <b>C</b> utilizing most of the algorithms described in the book.
+Kalah was displayed on a data voice VT220 terminal connected by twisted pair
+to the Unix based Nortel Meridian DV1.  At this time the game engine was not abstracted for re-use.
+The Meridian DV1 had a 68000 processor running at around 6MHz.
+<p>
+Then in 1995, Paul refactored the game engine portion of Kalah
+to be completely reusable by any strategy game.
+This was achieved using C++ templates to optimize by favoring inline instructions
+and minimizing vtable indirection.  Kalah ran on Windows 95.
+<p>
+In 2000, Paul translated his C++ game engine
+into the existing Java <b>Game42</b> implementation.  It is easy to reuse the Game42 engine
+because all of the complex AlphaBeta search optimizations are encapsulated within
+protected classes <i>Turn</i> and <i>Plan</i>.  <i>Turn</i> searches possible moves
+looking way ahead and recording the best <i>Plan</i>s for consecutive turns.
+Recorded <i>Plan</i>s are cached and reused by <i>Game</i> for optimizing future searches.
+<p>
+In 2012, Paul created an HTML5 canvas based UI called <a href="http://merrelles.com" target="_top">Merrelles Mobile</a>,
+by compiling the original Java down to Javascript using Google Web Toolkit and interestingly Merrelles Mobile is only 5 times slower than the original Java Applet.
+<p>
+At present, 2014, processor speeds are approaching 8GHz, approximately 1000 times faster than in 1985!
+<p>
+<table>
+<tr><td align=center>
+	<h1>org.pesullivan.game.game42 Classes and Interfaces</h1>
+</td></tr>
+<tr><td align=center>
+	<img src=../../../../MillOverviewGame42.png>
+</td></tr>
+<tr><td align=center>
+	<h3>N.B. All <i>static</i> members are constant.</h3>
+</td></tr>
+</table>
+</body>
+</html>

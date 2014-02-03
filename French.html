@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html manifest="french.appcache">
+<head>
+<META name=Keywords	content="nine mens morris, morris, mill, muhle, Morelles, Merrills, Merels, merrelles, game, applet, java, online, blind, visually impaired, accessibility, assistive, paul emory sullivan">
+<META name=Description	content="Play this 3D Java game with your computer.  Select levels ranging from beginner to guru.">
+<meta name=Author	content="Paul Emory Sullivan">
+<title>Nine Mens Morris Web Game</title>
+<Script>
+<!--
+function showAppletParameters()
+{
+	prompt(	"Applet Parameters:", getApplet().GetAppletSceneParameters());
+}
+function doCommand(parsingBlanks)
+{
+	var command	= getCommand();
+	var sCommand	= command.value;
+	command.value	= "";
+	if	(""!=sCommand || parsingBlanks)
+	{
+		var applet		= getApplet();
+		var commandPrompt 	= getCommandPrompt();
+		var sCommandPrompt;
+		if	(applet && appletLoaded)
+		{
+			var sStatus	= applet.doCommand(sCommand);
+			sCommandPrompt	= sStatus + " Press TAB.";
+		}
+		else
+		{
+			sCommandPrompt	= "To play Merrelles you must enable the Java Plugin on your browser!";
+		}
+		commandPrompt.innerHTML = sCommandPrompt;
+		commandPromptFocus();
+	}
+	return false; // Do not reload page on submit otherwise applet is reset.
+}
+function commandFocus() {
+	var command = document.getElementById("Command");
+	command.focus();
+}
+// This method is accessed by the applet init method.
+var appletLoaded	= false;
+function onLoadApplet()
+{
+	appletLoaded	= true;
+}
+// This method is accessed by the applet to yeild focus without relying on a mouse.
+function commandPromptFocus()
+{
+	getCommandPrompt().focus();
+}
+function setGenericCommandPrompt()
+{
+	// Use a generic message since mouse actions do not update it.
+	var commandPrompt	= getCommandPrompt();
+	commandPrompt.innerHTML = "Command Form";
+}
+function getCommand()
+{
+	return document.getElementById("Command");
+}
+function getCommandPrompt()
+{
+	return document.getElementById("CommandPrompt");
+}
+function getApplet()
+{
+	return document.millApplet;
+}
+function setLocalStorage()
+{
+	if (	window.localStorage	)
+	{
+		window.localStorage.setItem("languagecode", "fr");	// Used by mobi/index.html
+	}
+}
+-->
+</Script>
+<LINK REL=stylesheet HREF="style/gothic.css" TYPE="text/css">
+</head>
+<body	Class="Plain"
+	background="style/txtBG.gif"
+	TopMargin="0"
+	MarginHeight="0"
+	onload="setLocalStorage()"
+>
+<APPLET name=millApplet code=org.pesullivan.game.mill.ui.MillApplet.class archive=src/Mill1207.jar width=800 height=585 MAYSCRIPT>
+
+	<param name="initial_focus"	value="false"	/> <!-- Else IE6.X bug makes applet hog focus -->
+
+	<param name="yourMove0"	value="Le tour bleu."	/> <!-- Localized Message -->
+	<param name="yourMove1"	value="Le tour rouge."	/>
+	<param name="color0"	value="Blue"		/>
+	<param name="color1"	value="Rouge"		/>
+
+	<param name="drawBoard"	value="1" /> <!-- 0 if image already includes board -->
+
+	<param name="fontColor" value="0,0,0" />
+
+	<! Colors of tops and sides of game peices for players 0 and 1. -->
+	<PARAM NAME=p0TopRgb	VALUE="40,70,220"><!-- Player 0 Top color -->
+	<PARAM NAME=p1TopRgb	VALUE="200,70,40"><!-- Player 1 Top color -->
+	<PARAM NAME=p0SideRgb	VALUE="20,50,140"><!-- Player 0 Side color -->
+	<PARAM NAME=p1SideRgb	VALUE="120,50,20"><!-- Player 1 Side color -->
+
+	<PARAM NAME=hersheyFont	VALUE="src/org/dravhershey/gothicita.jhf"><!-- Security constrains to subdir -->
+	<PARAM NAME=imageDir	VALUE="style/">
+	<PARAM NAME=locale	VALUE="fr_CA">
+	<PARAM NAME=image0	VALUE="starBirth.gif">
+	<PARAM NAME=boardWidth0	VALUE="1050">
+	<PARAM NAME=eyePoint0	VALUE="350,-100,-1500">
+	<PARAM NAME=boardOrig0	VALUE="-125.39091441674793,884.7596069492656,1996.16383381997">
+	<PARAM NAME=boardVectA0	VALUE="0.999950572141131,4.6871119531335804E-5,-0.009942387928594382">
+	<PARAM NAME=boardVectB0	VALUE="-0.009932738107024134,-0.03958897959432335,-0.999166679492655">
+	<PARAM NAME=image1	VALUE="stars.gif">
+	<PARAM NAME=boardWidth1	VALUE="1000">
+	<PARAM NAME=eyePoint1	VALUE="375,-100,-1500">
+	<PARAM NAME=boardOrig1	VALUE="-130.0,220.0,2000.0">
+	<PARAM NAME=boardVectA1	VALUE="1.0,0.0,0.0">
+	<PARAM NAME=boardVectB1	VALUE="0.0,1.0,0.0">
+	<PARAM NAME=image2	VALUE="spaceBubble.gif">
+	<PARAM NAME=boardWidth2	VALUE="1000">
+	<PARAM NAME=eyePoint2	VALUE="200,-100,-1500">
+	<PARAM NAME=boardOrig2	VALUE="-120.86104440008558,809.1437281444291,1843.2038156386373">
+	<PARAM NAME=boardVectA2	VALUE="0.8426472188325691,-0.26625146237524816,0.4680339906003265">
+	<PARAM NAME=boardVectB2	VALUE="0.49910026996760204,0.05996400608639012,-0.864467021877601">
+	<PARAM NAME=image3	VALUE="planetaryNebulae.gif">
+	<PARAM NAME=boardWidth3	VALUE="1000">
+	<PARAM NAME=eyePoint3	VALUE="375,-100,-1500">
+	<PARAM NAME=boardOrig3	VALUE="-126.06863848315578,180.07509405302483,1862.5190514763963">
+	<PARAM NAME=boardVectA3	VALUE="0.9999875000260416,-1.4997687610700518E-4,-0.004997729344811931">
+	<PARAM NAME=boardVectB3	VALUE="1.499768761070052E-4,0.9999999887533978,-3.747742597223422E-7">
+	<PARAM NAME=image4	VALUE="planetaryBottle.gif">
+	<PARAM NAME=boardWidth4	VALUE="1100">
+	<PARAM NAME=eyePoint4	VALUE="375,0,-1500">
+	<PARAM NAME=boardOrig4	VALUE="113.2407086100601,57.303429289587996,1917.61409612789">
+	<PARAM NAME=boardVectA4	VALUE="0.9286646355765097,0.32122654789156596,0.1854602347064913">
+	<PARAM NAME=boardVectB4	VALUE="-0.3709204694129826,0.8042471624910013,0.46433231778825484">
+	<PARAM NAME=image5	VALUE="stellarExhaust.gif">
+	<PARAM NAME=boardWidth5	VALUE="950">
+	<PARAM NAME=eyePoint5	VALUE="375,-100,-1500">
+	<PARAM NAME=boardOrig5	VALUE="-35.10210614670791,1032.947355192672,2616.7718056498243">
+	<PARAM NAME=boardVectA5	VALUE="0.5967643659175019,-0.6694650120334626,0.44236736431797913">
+	<PARAM NAME=boardVectB5	VALUE="0.7023979628124096,0.1692854537331019,-0.6913606393702394">
+	<PARAM NAME=image6	VALUE="pillars.gif">
+	<PARAM NAME=boardWidth6	VALUE="1100">
+	<PARAM NAME=eyePoint6	VALUE="150,-100,-1500">
+	<PARAM NAME=boardOrig6	VALUE="-145.86125978208645,734.8827035988368,1901.8007113788515">
+	<PARAM NAME=boardVectA6	VALUE="0.7915209910949945,-0.17117398103583203,0.5866804770276927">
+	<PARAM NAME=boardVectB6	VALUE="0.6087976085087988,0.13684179267431135,-0.7814344431710593">
+	This Java applet plays Nine Men's Morris!
+	<br>
+	If you have not installed the Java Plug In for your browser you may download it from www.java.com.
+</APPLET>
+<FORM name="Consol" onsubmit="return doCommand(true);">
+	<A ID=CommandPrompt class=Message href="javascript:commandFocus();"
+		onblur="setGenericCommandPrompt()" >Command Form</A>
+	<br>
+	<input	ID=Command name=command	size=4	maxlength=4 onblur="doCommand(false);"
+		alt="Enter a command followed by TAB.">
+	<A class=Message href="javascript:commandFocus();">Press SHIFT TAB from here to return to the Command Form.</A>
+</FORM>
+<A href=English.html>Play in English</A>
+<br><A href=German.html>Spielen auf Deutsch</A>
+<H2 Class=Fancy>Index<IMG SRC=style/Index.gif></H2>
+<a href=#Welcome>Bienvenue aux Merelles</a>
+<br><a href=#Instructions>Instructions</a>
+<br><a href=#InstructionsForTheBlind>Instructions for the Visually Impaired</a>
+<br><a href=#Links>Liens (en anglais)</a>
+<br><A HREF="./">Merrelles Mobile</A>
+<br><a href=#Credits>Crédits</a>
+<br><a name="Welcome"><H2 Class=fancy>Bienvenue aux Merelles<IMG SRC=style/Welcome.gif></h2></a>
+Les Merelles est un des jeux les plus anciens au monde.
+Ce jeu continue de se répandre, spécialement en Europe où les jeux de Merelles sont construit dans plusieurs places publiques.
+Cette page a pour but de continuer cette tradition européenne sur l'Internet.
+Amusez-vous bien!
+<a name="Instructions"><H2 Class=fancy>Instructions<IMG SRC=style/Instructions.gif></h2></a> 
+L'ordinateur est votre opposant.
+Chaque joueur commence avec neuf jetons colorés.
+Pour gagner, il faut soit immobiliser votre opposant ou éliminer sept de ses pièces.
+<p>
+À tout moment, il y a un message au-dessous de la table de jeu qui vous dit ce qui ce passe.
+Votre opposant annonce son tour en notant: "Mon Tour. Je Pense..."
+Si le message indique: "Tour au bleu." ou "Tour au rouge." cela veut dire que c'est à votre tour à jouer et que vous êtes cette couleur.
+<p>
+Votre opposant joue en animant ces pièces au-dessus de la planche de jeu.
+Si vous devenez impatient, vous pouvez passer l'animation et aller directement à votre tour en appuyant sur la planche de jeu.
+<p>
+Il y a trois étapes dans ce jeu.
+À chaque étape tu élimine des pièces en alignant 3 jetons (appelé rangée) sur une ligne de la planche de jeu.
+Lorsque vous faite une rangée ou deux, vous devez enlever une des pièces de l'adversaire en appuyant dessus, si c'est possible.
+Les pièces capturées sont éliminées du jeu mais les pièces dans les rangées sont protégées
+sauf quands tous les pièces sont dans les rangées.
+<p>
+La première étape commence sur une planche de jeu vide.
+À chaque tour, vous placez une pièce sur une intersection libre.
+Pour placer une pièce, vous pouvez appuyer dessus et l'emmener au-dessus de l'intersection désirée.
+Vous pouvez aussi tout simplement appuyer sur l'intersection.
+<p>
+La deuxième étape commence quand toutes les pièces sont en jeu.
+À chaque tour, vous glissez une pièce sur une ligne vers un emplacement libre.
+Vous pouvez gagner en entourant et immobilisant toutes les pièces de votre opposant.
+<p>
+La troisième étape se déroule lorsque vous n'avez que trois pièces restantes.
+À chaque tour, vous pouvez déplacer votre pièce partout où il y a un espace libre.
+Vos pièces ne peuvent se faire immobiliser mais vous perdez si vous en perdez 1.
+<p>
+Icônes sur le côté de la planche de jeu qui vous donne du contrôle ( même durant l'animation)
+<br>
+<IMG SRC="style/New.gif">	Commencer une nouvelle partie	<br>
+<IMG SRC="style/Undo.gif">	Revenir un mouvement en arrière	<br>
+<IMG SRC="style/Redo.gif">	Un mouvement en avant		<br>
+<IMG SRC="style/SwapSides.gif">	Changer de couleur		<br>
+<IMG SRC="style/Cheat.gif">	Laisser l'ordinateur jouer pour vous
+<p>
+Appuyez sur un chiffre romain pour choisir le niveau de difficulté.
+Si vous gagné au niveau VII, vous êtes un génie!
+<br>Bonne Chance!
+<p>
+<a name="InstructionsForTheBlind"><H2 Class=fancy>Instructions for the Visually Impaired</h2></a>
+The Command Form provides accessibility to those who use a keyboard instead of a mouse.
+It is designed to be used along with screen reader assistive technology.
+When you use the Command Form the game is still presented visually, so your sighted friends can play along.
+Before you enter a command you must place your screen reader in Forms Mode by pressing ENTER.
+Once you are in Forms Mode you enter 1 to 4 letter commands followed by TAB.
+After each command, there may be a delay while your computer plans its move.
+Once your computer has a move,
+feedback appears as a link from which you return to the Command Form by again pressing TAB.
+Do not press ENTER unless you want to exit your screen reader's Forms Mode.
+The following commands are available.
+<table>
+<tr>
+<td Class=Fancy align=right><H2>Command&nbsp;&nbsp;&nbsp;</H2></td><td Class=Fancy><H2>Description.</H2></td>
+</tr>
+<tr>
+<td Class=Plain align=right>N&nbsp;&nbsp;&nbsp;</td><td Class=Plain>New Game.</td>
+</tr>
+<tr>
+<td Class=Plain align=right>U&nbsp;&nbsp;&nbsp;</td><td Class=Plain>Undo.</td>
+</tr>
+<tr>
+<td Class=Plain align=right>R&nbsp;&nbsp;&nbsp;</td><td Class=Plain>Redo.</td>
+</tr>
+<tr>
+<td Class=Plain align=right>S&nbsp;&nbsp;&nbsp;</td><td Class=Plain>Swap Sides.</td>
+</tr>
+<tr>
+<td Class=Plain align=right>C&nbsp;&nbsp;&nbsp;</td><td Class=Plain>Have your computer move for you.</td>
+</tr>
+<tr>
+<td Class=Plain align=right>L&nbsp;&nbsp;&nbsp;</td><td Class=Plain>Display the level of difficulty.  1 is the default.</td>
+</tr>
+<tr>
+<td Class=Plain align=right>1...7&nbsp;&nbsp;&nbsp;</td><td Class=Plain>Set the level of difficulty.  7 is the hardest.</td>
+</tr>
+<tr>
+<td Class=Plain align=right>P&nbsp;&nbsp;&nbsp;</td><td Class=Plain>Display the last 3 moves.</td>
+</tr>
+<tr>
+<td Class=Plain align=right>B&nbsp;&nbsp;&nbsp;</td><td Class=Plain>Describe the board layout.</td>
+</tr>
+<tr>
+<td Class=Plain align=right VAlign=top>MOVE&nbsp;&nbsp;&nbsp;<br>ENTRY&nbsp;&nbsp;&nbsp;<p></td>
+<td Class=Plain>
+When you enter a move you need to know how to identify board positions.
+The game board consists of 3 concentric squares with four spoke line segments joining the midpoints of their adjacent sides.
+Each of the resulting corners and intersections is a board position, making 24 in all.
+The 3 concentric squares are called X, Y and Z starting with the outer square.
+Positions on each square are called 1 to 8 starting at the upper left and going clockwise.
+Here are some examples.
+The upper left position of the outer square is called X1 and the lower right position of the middle square is called Y5.
+The left side of the middle square consists of positions Y1, Y8 and Y7.
+And the left spoke consists of positions X8, Y8 and Z8.
+To enter a placing or taking move, just enter its position.
+For example to place a piece on Y4 enter Y4.
+To enter a sliding or flying move enter both positions.
+For example to slide a piece from X2 to Y2 enter X2Y2.
+</td>
+</tr>
+</table>
+<p>
+Merrelles should work with any screen reader compatible browser.
+In addition, the Java Plug In must be installed and enabled in your browser in order to play.
+Merrelles has been tested successfully with both Internet Explorer 6 and Firefox 2 and both JAWS 8 and Window-Eyes 6.
+<p>
+If you do not own a Nine Men's Morris board for the blind, you can make one easily.
+First find some thick cardboard and cut out 2, 4, 6, and 8 inch squares.
+Glue each square to the center of the next, keeping corners aligned.
+The bottom 3 steps of the resulting pyramid delineate your 3 concentric playing squares X, Y and Z.
+You may mark each playing position by sticking thumbtacks into steps X, Y and Z at their corners and midpoints.
+Next, to make your playing pieces, find a discarded rubber mouse pad and cut out
+9 circles and 9 squares 1 inch across. 
+Now you are ready to play!
+<br>
+<A href="javascript:commandFocus();">Access the Command Form</A>
+<p>
+<a name="Links"><H2 Class=fancy>Liens (en anglais)<IMG SRC=style/Links.gif></h2></a>
+<A HREF=src/index.html>Documentation sur l'applet</A><br>
+<A HREF="http://www.tradgames.org.uk/games/Nine-Mens-Morris.htm">
+Histoire des Merelles</A><br>
+<A HREF="http://en.wikipedia.org/wiki/Nine_Men's_Morris">
+Wiki</A>
+<p>
+<a name="Credits"><H2 Class=fancy>Crédits<IMG SRC=style/Credits.gif></h2></a>
+<Table>
+<tr>
+	<td Class=Plain Align=Right>Paul Emory Sullivan&nbsp;&nbsp;&nbsp;</td>
+	<td Class=Plain>Applet Merrelles et engin de jeu Game42.</td>
+</tr>
+<tr>
+	<td Class=Plain Align=Right>Claire Debika Sullivan&nbsp;&nbsp;&nbsp;</td>
+	<td Class=Plain>Dessins de Papyrus et Designer Artistique.</td>
+</tr>
+<tr>
+	<td Class=Plain Align=Right>Kevin Kimmell Lavigne&nbsp;&nbsp;&nbsp;</td>
+	<td Class=Plain>Translation pour le français.</td>
+</tr>
+<tr>
+	<td Class=Plain Align=Right>Zoltan Gothard&nbsp;&nbsp;&nbsp;</td>
+	<td Class=Plain>Détails de jeu et interface utilisateur.</td>
+</tr>
+<tr>
+	<td Class=Plain Align=Right>Ahdy Atalla&nbsp;&nbsp;&nbsp;</td>
+	<td Class=Plain>Détails de jeu.</td>
+</tr>
+<tr>
+	<td Class=Plain Align=Right>James P. Buzbee&nbsp;&nbsp;&nbsp;</td>
+	<td Class=Plain>Classe de fond  Hershey.</td>
+</tr>
+<tr>
+	<td Class=Plain Align=Right>Dr. A.V. Hershey&nbsp;&nbsp;&nbsp;</td>
+	<td Class=Plain>Fond Hershey.</td>
+</tr>
+<tr>
+	<td Class=Plain Align=Right>James Hurt&nbsp;&nbsp;&nbsp;</td>
+	<td Class=Plain>Fond Italien Gothique Hershey.</td>
+</tr>
+<tr>
+	<td Class=Plain Align=Right>Nasa&nbsp;&nbsp;&nbsp;</td>
+	<td Class=Plain>Photos du télescope Hubbles.</td>
+</tr>
+</Table>
+<p>
+<A HREF="mailto:merrelles.game@gmail.com">Envoyez vos commentaires à Paul Emory Sullivan</a>
+<p>
+<A HREF="http://www.digits.com/"><IMG SRC="style/wc.gif" BORDER=0 ></A>
+<A Href="javascript:showAppletParameters();">
+	<img src="http://counter.digits.com/wc/-d/4/MerrellesWebGame" BORDER=0>
+</A>
+</body>
+</html>

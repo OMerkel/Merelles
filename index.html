@@ -24,6 +24,11 @@
 		var appletLinkL			= document.getElementById(	"appletlinktext"	+ languageCode	);
 		playLink.innerHTML		= playLinkL.innerHTML;
 		instructions.innerHTML	= instructionsL.innerHTML;
+		if	(	navigator && navigator.javaEnabled()	)
+		{
+			appletLink.style.display="block";
+			appletLink.innerHTML= appletLinkL.innerHTML;
+		}
 	}
 </script>
 </head>
@@ -47,11 +52,9 @@
 		</div>
 	</center>
 	<div id="instructions" class="instructions"></div>
-	<p>
 	<center>
 		<img src="http://counter.digits.com/wc/-d/4/MerrellesWebGame" BORDER="0" >
-		<br>
-		<a href="mailto:merrelles.game@gmail.com">email Paul</a>
+		<div id="appletlinktext" class="appletplaylink"></div>
 	</center>
 </div><!-- splashcontainer -->
 
@@ -63,6 +66,7 @@
 </tr>
 </table>
 <div id="playlinktexten" style="display:none">Play</div>
+<div id="appletlinktexten" style="display:none"><a href="English.html">Merrelles Applet</a><p></div>
 <div id="instructionsen" style="display:none">
 	<b>Instructions</b>
 	<p>
@@ -97,8 +101,11 @@
 	- Change level
 	<br>
 	- New game
+	<p>
+	<A HREF="mailto:merrelles.game@gmail.com">Send your feedback to Paul Emory Sullivan</a>
 </div><!-- English Instructions -->
 <div id="playlinktextfr" style="display:none">Jouer</div>
+<div id="appletlinktextfr" style="display:none"><a href="French.html">Merrelles Applet</a><p></div>
 <div id="instructionsfr" style="display:none">
 	<b>Instructions</b>
 	<p>
@@ -134,8 +141,11 @@
 	- Changer le niveau
 	<br>
 	- Nouveau jeu
+	<p>
+	<A HREF="mailto:merrelles.game@gmail.com">Envoyez vos commentaires à Paul Emory Sullivan</a>
 </div><!-- French Instructions -->
 <div id="playlinktextde" style="display:none">Spielen</div>
+<div id="appletlinktextde" style="display:none"><a href="German.html">Merrelles Applet</a><p></div>
 <div id="instructionsde" style="display:none">
 	<b>Anweisungen</b>
 	<p>
@@ -170,6 +180,8 @@
 	- Stufe Ändern
 	<br>
 	- Neues Spiel
+	<p>
+	<A HREF="mailto:merrelles.game@gmail.com">Schicken Sie Paul Emory Sullivan Ihre Antwort (Englisch)</a>
 </div><!-- German Instructions -->
 </body>
 </html>
